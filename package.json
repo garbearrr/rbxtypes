@@ -1,6 +1,6 @@
 
 {
-    "name": "@rbxgar/proxy",
+    "name": "@rbxgar/types",
     "version": "1.0.0",
     "description": "",
     "main": "dist/mod.lua",
