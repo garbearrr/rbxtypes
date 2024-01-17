@@ -1,19 +1,4 @@
-type PrependNextNum<A extends Array<unknown>> = A['size'] extends infer T ? ((t: T, ...a: A) => void) extends ((...x: infer X) => void) ? X : never : never;
-type EnumerateInternal<A extends Array<unknown>, N extends number> = {
-    0: A;
-    1: EnumerateInternal<PrependNextNum<A>, N>;
-}[N extends A['size'] ? 0 : 1];
-
-export type Enumerate<N extends number> = EnumerateInternal<[], N> extends (infer E)[] ? E : never;
-export type Range<FROM extends number, TO extends number> = Exclude<Enumerate<TO>, Enumerate<FROM>>;
-
-export type i8 = Range<-128, 127>;
-export type u8 = Range<0, 255>;
-export type i16 = Range<-32768, 32767>;
-export type u16 = Range<0, 65535>;
-export type i32 = Range<-2147483648, 2147483647>;
-export type u32 = Range<0, 4294967295>;
-
+/// <reference types="@rbxts/types" />
 export declare type buffer = object;
 
 export declare namespace buffer {
